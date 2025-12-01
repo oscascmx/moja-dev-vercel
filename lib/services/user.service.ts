@@ -35,10 +35,10 @@ export async function createUser(
     relativeGender: string,
     relativeAlive: boolean,
     relativeOrigin: string,
-    relativeRegion: number,
-    relativeRelationship: number,
-    relativeDecade: number,
-    relativeCountry: number 
+    relativeRegion: string,
+    relativeRelationship: string,
+    relativeDecade: string,
+    relativeCountry: string 
     ): Promise<StoredUser> {
   const normalized = email.toLowerCase();
 
@@ -58,7 +58,7 @@ export async function createUser(
     },
   });
 
-  const relative = await prisma.LstCrRelative.create(
+  const relative = await prisma.lstCrRelative.create(
     {
       data: {
         idUser: user.id,
@@ -81,8 +81,8 @@ export async function createUser(
     id: user.id,
     email: user.email,
     name: user.name,
-    paternal_surname: user.paternal_surname,
-    maternal_surname: user.maternal_surname,
+    paternal_surname: user.paternalSurname,
+    maternal_surname: user.maternalSurename,
     birth: user.birth,
     gender: user.gender,
     croataMember: user.croataMember,

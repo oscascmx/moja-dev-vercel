@@ -41,8 +41,8 @@ export default function Page() {
                 <div className="input-field mt-20">
                   <label>Género:*</label>
                   <div className="radio-group">
-                    <label><input type="radio" name="gender" /> Hombre</label>
-                    <label><input type="radio" name="gender" /> Mujer</label>
+                    <label><input type="radio" name="gender" value="male" /> Hombre</label>
+                    <label><input type="radio" name="gender" value="female" /> Mujer</label>
                   </div>
                 </div>
                 <hr />
@@ -55,8 +55,8 @@ export default function Page() {
                   <div>
                     <label>¿Eres miembro de la <br />Asociación Croata Mexicana?: *</label>
                     <div className="radio-group mt-10">
-                      <label><input type="radio" name="member" /> Si</label>
-                      <label><input type="radio" name="member" /> No</label>
+                      <label><input type="radio" name="member" value="true" /> Si</label>
+                      <label><input type="radio" name="member" value="false" /> No</label>
                     </div>
                   </div>
                 </div>
@@ -96,22 +96,22 @@ export default function Page() {
                 <div className="input-field mt-20">
                   <label>Género:*</label>
                   <div className="radio-group">
-                    <label><input type="radio" name="rel_gender" /> Hombre</label>
-                    <label><input type="radio" name="rel_gender" /> Mujer</label>
+                    <label><input type="radio" name="rel_gender" value="male" /> Hombre</label>
+                    <label><input type="radio" name="rel_gender" value="female" /> Mujer</label>
                   </div>
                 </div>
                 <div className="input-field">
                   <label>Grado de parentesco:*</label>
                   <select name="relativeRelationship" >
-                    <option value="1">Padre</option>
-                    <option value="2">Madre</option>
-                    <option value="3">Abuelo paterno</option>
-                    <option value="4">Abuela paterna</option>
-                    <option value="5">Abuelo materno</option>
-                    <option value="6">Abuela materna</option>
-                    <option value="7">Bisabuelo PP (padre de abuelo paterno)</option>
-                    <option value="8">Bisabuela PM (madre de abuelo paterno)</option>
-                    <option value="9">Bisabuelo MP (padre de abuela paterna)</option>
+                    <option value="01">Padre</option>
+                    <option value="02">Madre</option>
+                    <option value="03">Abuelo paterno</option>
+                    <option value="04">Abuela paterna</option>
+                    <option value="05">Abuelo materno</option>
+                    <option value="06">Abuela materna</option>
+                    <option value="07">Bisabuelo PP (padre de abuelo paterno)</option>
+                    <option value="08">Bisabuela PM (madre de abuelo paterno)</option>
+                    <option value="09">Bisabuelo MP (padre de abuela paterna)</option>
                     <option value="10">Bisabuela MM (madre de abuela paterna)</option>
                     <option value="11">Bisabuelo (padre de abuelo materno)</option>
                     <option value="12">Bisabuela (madre de abuelo materno)</option>
@@ -135,26 +135,26 @@ export default function Page() {
                 <div className="input-field">
                   <label>Región:*</label>
                   <select name="relativeRegion" >
-                    <option value="1">Croacia Central</option>
-                    <option value="2">Dalmacia</option>
-                    <option value="3">Eslavonia</option>
-                    <option value="4">Istria</option>
-                    <option value="5">Otra</option>
-                    <option value="6">No sé</option>
+                    <option value="01">Croacia Central</option>
+                    <option value="02">Dalmacia</option>
+                    <option value="03">Eslavonia</option>
+                    <option value="04">Istria</option>
+                    <option value="05">Otra</option>
+                    <option value="06">No sé</option>
                   </select>
                 </div>
                 <div className="grid mb-12">
                   <label>¿En qué década emigró de Croacia aproximadamente?:*</label>
                   <select name="relativeDecade" >
-                    <option value ="1">Después de 2000</option>
-                    <option value ="2">1990</option>
-                    <option value ="3">1980</option>
-                    <option value ="4">1970</option>
-                    <option value ="5">1960</option>
-                    <option value ="6">1950</option>
-                    <option value ="7">1940</option>
-                    <option value ="8">1930</option>
-                    <option value ="9">1920</option>
+                    <option value ="01">Después de 2000</option>
+                    <option value ="02">1990</option>
+                    <option value ="03">1980</option>
+                    <option value ="04">1970</option>
+                    <option value ="05">1960</option>
+                    <option value ="06">1950</option>
+                    <option value ="07">1940</option>
+                    <option value ="08">1930</option>
+                    <option value ="09">1920</option>
                     <option value ="10">1910</option>
                     <option value ="11">1900</option>
                     <option value ="12">1890</option>
@@ -202,7 +202,7 @@ export default function Page() {
               <div>
                 <p className="mt-0">Todos tus datos personales te pertenecen, y se mantendrán seguros en estricto apego a nuestra política de privacidad, <a href="#" className="maroon-link">conócela aquí.</a></p>
                 <div className="checkbox-group">
-                  <input type="checkbox" name="agreement"/>
+                  <input type="checkbox" name="agreement" value="1"/>
                   <label>
                     Estoy de acuerdo con la
                     <a href="#" className="maroon-link">política de privacidad</a>,

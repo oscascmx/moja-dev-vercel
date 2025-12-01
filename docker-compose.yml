@@ -1,0 +1,37 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mojaweb
+    ports:
+      - "3500:3000" # expose local port
+    volumes:
+      - .:/usr/app # mount local working directory for live reload
+      - /app/node_modules # mount node_modules for caching
+    depends_on:
+      - postgres # wait for postgres service container
+    environment:
+      - POSTGRES_DB_URI=postgresql://postgres:password@postgres:5432 # postgres container address
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: moja
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+
+volumes:
+  postgres_data:

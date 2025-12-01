@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  runtime  = "nodejs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model RelationshipsCat {
+  id                  String   @id @default(cuid())
+  description         String   @unique
+
+  @@map("relationships_cat")
+}
+
+model OrgRegionCat {
+  id                  String   @id @default(cuid())
+  description         String   @unique
+
+  @@map("org_region_cat")
+}
+
+model DecadesCat {
+  id                  String   @id @default(cuid())
+  description         String   @unique
+
+  @@map("decades_cat")
+}
+
+
+model User {
+  id                  String   @id @default(cuid())
+  email               String   @unique
+  name                String
+  paternalSurname     String  @map("paternal_surename")
+  maternalSurename    String  @map("maternal_surename")
+  birth               DateTime
+  gender              String
+  croataMember        Boolean @map("croata_member")
+  membershipNumber    String @map("membership_nimber")
+  passwordHash        String  @map("password_hash")
+  photoUrl            String?  @map("photo_url")
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+  signedAgreement     Boolean @map("signed_agreement")
+  idLstCrRelative     String @map("id_last_cr_rel")
+
+  @@map("users")
+}
+
+model LstCrRelative{
+  id                  String   @id @default(cuid())
+  idUser              String  @map("id_related_user")
+  name                String
+  paternalSurname     String  @map("paternal_surename")
+  maternalSurename    String  @map("maternal_surename")   
+  birth               DateTime
+  gender              String 
+  alive               Boolean
+  orgPopulation       String @map("org_population")
+  idRegion            String  @map("id_region")
+  idRelationShip      String @map("id_relation_ship")
+  idMigrationDecade   String @map("id_migration_decade")
+  migratedCountry     String @map("fst_migrated_country")
+
+  @@map("last_croatian_relative")
+}
+
+
+
+
+
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  email     String
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("password_reset_tokens")
+  @@index([token])
+  @@index([email])
+}

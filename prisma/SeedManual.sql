@@ -1,0 +1,41 @@
+insert into relationships_cat(id,description) values('01','Padre');
+insert into relationships_cat(id,description) values('02','Madre');
+insert into relationships_cat(id,description) values('03','Abuelo paterno');
+insert into relationships_cat(id,description) values('04','Abuela paterna');
+insert into relationships_cat(id,description) values('05','Abuelo materno');
+insert into relationships_cat(id,description) values('06','Abuela materna');
+insert into relationships_cat(id,description) values('07','Bisabuelo PP (padre de abuelo paterno)');
+insert into relationships_cat(id,description) values('08','Bisabuela PM (madre de abuelo paterno)');
+insert into relationships_cat(id,description) values('09','Bisabuelo MP (padre de abuela paterna)');
+insert into relationships_cat(id,description) values('10','Bisabuela MM (madre de abuela paterna)');
+insert into relationships_cat(id,description) values('11','Bisabuelo (padre de abuelo materno)');
+insert into relationships_cat(id,description) values('12','Bisabuela (madre de abuelo materno)');
+insert into relationships_cat(id,description) values('13','Bisabuelo (padre de abuela materna)');
+insert into relationships_cat(id,description) values('14','Bisabuela (madre de abuela materna)');
+insert into relationships_cat(id,description) values('15','Tatarabuelo(a)');
+insert into relationships_cat(id,description) values('16','Trastatarabuelo (a)');
+
+
+insert into org_region_cat(id,description) values('01','Croacia Central');
+insert into org_region_cat(id,description) values('02','Dalmacia');
+insert into org_region_cat(id,description) values('03','Eslavonia');
+insert into org_region_cat(id,description) values('04','Istria');
+insert into org_region_cat(id,description) values('05','Otra');
+insert into org_region_cat(id,description) values('06','No sé');
+
+insert into decades_cat(id,description) values('01','Después de 2000');
+insert into decades_cat(id,description) values('02','1990');
+insert into decades_cat(id,description) values('03','1980');
+insert into decades_cat(id,description) values('04','1970');
+insert into decades_cat(id,description) values('05','1960');
+insert into decades_cat(id,description) values('06','1950');
+insert into decades_cat(id,description) values('07','1940');
+insert into decades_cat(id,description) values('08','1930');
+insert into decades_cat(id,description) values('09','1920');
+insert into decades_cat(id,description) values('10','1910');
+insert into decades_cat(id,description) values('11','1900');
+insert into decades_cat(id,description) values('12','1890');
+insert into decades_cat(id,description) values('13','1880');
+insert into decades_cat(id,description) values('14','1870');
+insert into decades_cat(id,description) values('15','1860');
+insert into decades_cat(id,description) values('16','Antes de 1860');

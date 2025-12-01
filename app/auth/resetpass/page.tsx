@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import CaptchaValidator from '../register/CaptchaValidator'
 
 
 

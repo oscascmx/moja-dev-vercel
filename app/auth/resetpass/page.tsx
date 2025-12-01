@@ -15,7 +15,8 @@ export default function Register() {
     } = useForm();
 
     const router = useRouter();
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
+
 
     const onSubmit = handleSubmit(async (data) => {
         console.log(data);
@@ -28,9 +29,9 @@ export default function Register() {
 
         console.log("RES:" + res)
 
-        if (res.error) {
+        if (res && res.error) {
             setError(res.error)
-        } else {
+        } else if(res){
             router.push('/auth/profile')
             router.refresh()
         }
